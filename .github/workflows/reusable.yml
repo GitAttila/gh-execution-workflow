@@ -1,6 +1,6 @@
 name: Reusable Deploy
-on: 
-  workflow_call
+on:
+  workflow_call:
     inputs:
       artifact-name:
         description: The name of the deployable artifact files
@@ -14,7 +14,7 @@ jobs:
       - name: Get Code
         uses: actions/download-artifact@v3
         with:
-          name: {{ inputs.artifact-name }}
+          name: { { inputs.artifact-name } }
       - name: List files
         run: ls -l -a
       - name: Output information
